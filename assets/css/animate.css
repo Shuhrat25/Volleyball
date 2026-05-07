@@ -1,0 +1,11 @@
+@keyframes l11-1 {
+  100% { top: -0.4px; }
+}
+
+@keyframes l11-2 {
+  4%,96% { transform: scaleY(1); }
+}
+
+@keyframes l11-3 {
+  100% { transform: scaleY(0.35) translate(0.2px,-0.2px); }
+}

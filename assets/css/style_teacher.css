@@ -1,0 +1,1012 @@
+.bx {
+    font-size: 1.7rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--color-white);
+    width: 230px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.close {
+    width: 60px;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    z-index: 500;
+    padding-bottom: 20px;
+    box-sizing: content-box;
+}
+
+.sidebar .logo .logo-name span {
+    color: var(--color-dark);
+}
+
+.sidebar .logo i {
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.sidebar .side-menu {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.sidebar .side-menu li {
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+
+.sidebar .side-menu li.active {
+    background: var(--color-light);
+    position: relative;
+}
+
+.sidebar .side-menu li.active::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--color-light);
+    z-index: -1;
+}
+
+.sidebar .side-menu li.active::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--color-light);
+    z-index: -1;
+}
+
+.sidebar .side-menu li a {
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--color-dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li.active a {
+    color: var(--primary);
+}
+
+.sidebar.close .side-menu li a {
+    width: calc(48px - (4px * 2));
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li a i {
+    min-width: calc(60px - ((4px + 6px) * 2));
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.sidebar .side-menu li a.logout {
+    color: var(--danger);
+}
+
+.valleyball_teacher .content {
+    position: relative;
+    width: calc(100% - 230px);
+    left: 230px;
+    transition: all 0.3s ease;
+}
+
+.valleyball_teacher .sidebar.close ~ .content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.valleyball_teacher .content nav {
+    height: 56px;
+    background: var(--color-white);
+    padding: 0 24px 0 0;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.valleyball_teacher .content nav::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 var(--color-white);
+}
+
+.valleyball_teacher .content nav a {
+    color: var(--color-dark);
+}
+
+.valleyball_teacher .content nav i {
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.valleyball_teacher .content nav form {
+    max-width: 400px;
+    width: 100%;
+    margin-right: auto;
+}
+
+.valleyball_teacher .content nav .notif {
+    font-size: 20px;
+    position: relative;
+}
+
+.valleyball_teacher .content nav .notif .count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: var(--danger);
+    border-radius: 50%;
+    color: var(--light);
+    border: 2px solid var(--light);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valleyball_teacher .content nav .profile img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.valleyball_teacher .content nav .theme-toggle {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    background: var(--grey);
+    cursor: pointer;
+    position: relative;
+    border-radius: 25px;
+}
+
+.valleyball_teacher .content nav .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.valleyball_teacher .content nav #theme-toggle:checked+.theme-toggle::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
+.valleyball_teacher .content main {
+    width: 100%;
+    padding: 0 24px;
+    max-height: calc(100vh - 56px);
+    display: none;
+}
+
+.valleyball_teacher .content main.active {
+    display: block;
+}
+
+.valleyball_teacher .content main .insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 30px;
+}
+
+.valleyball_teacher .content main .insights li {
+    padding: 24px;
+    background: var(--color-white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    cursor: pointer;
+}
+
+.valleyball_teacher .content main .insights li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valleyball_teacher .content main .insights li .info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.valleyball_teacher  .content main .insights li .info p {
+    color: var(--color-dark);
+}
+
+.valleyball_teacher .content main .bottom-data {
+    display: block;
+    /* flex-wrap: wrap;
+    grid-gap: 24px; */
+    margin-top: 24px;
+    width: 100%;
+    height: auto;
+    color: var(--color-dark);
+}
+
+.valleyball_teacher .content main .bottom-data>div {
+    border-radius: 20px;
+    background: var(--color-white);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.valleyball_teacher .content main .bottom-data .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.valleyball_teacher .content main .bottom-data .header h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.valleyball_teacher .content main .bottom-data .header .bx {
+    cursor: pointer;
+}
+
+.valleyball_teacher .content main .bottom-data .orders {
+    flex-grow: 1;
+    flex-basis: 500px;
+    height: auto;
+}
+
+.valleyball_teacher .content main .bottom-data .orders table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.valleyball_teacher .content main .bottom-data .orders table th {
+    padding-bottom: 12px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.valleyball_teacher .content main .bottom-data .orders table td {
+    padding: 16px 0;
+}
+
+.valleyball_teacher .content main .bottom-data .orders table tr td:first-child {
+    padding-left: 6px;
+}
+
+.valleyball_teacher .content main .bottom-data .orders table td img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.valleyball_teacher .content main .bottom-data .orders table tbody tr {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.valleyball_teacher .content main .bottom-data ul.vazifa_list .vazifa_content {
+    margin-top: 20px;
+    width: 100%;
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    background: var(--color-white);
+}
+ul.vazifa_list .vazifa_content{
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    cursor: auto;
+}
+ul.vazifa_list .vazifa_content .content_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+ul.vazifa_list .vazifa_content .content_title .data{
+    font-size: 14px;
+    padding: 5px 10px;
+    color: var(--light);
+    border-radius: var(--card-border-radius);
+}
+ul.vazifa_list .vazifa_content .content_title .data.green{
+    background: var(--success);
+}
+ul.vazifa_list .vazifa_content .content_title .data.red{
+    background: var(--danger);
+}
+ul.vazifa_list .vazifa_content .description{
+    font-size: 16px;
+    color: var(--color-gray);
+    margin-bottom: 10px;
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    background: var(--color-light);
+    margin-bottom: 18px;
+}
+ul.vazifa_list .vazifa_content .description .files ul li a{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+ul.vazifa_list .vazifa_content .description .files ul li a::before{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+ul.vazifa_list .vazifa_content .description .files ul li a:hover:before{
+    width: 100%;
+    transition: all 0.3s ease;
+}
+ul.vazifa_list .vazifa_content .description .files.less{
+    padding: 0;
+    overflow: hidden;
+    height: 0;
+    transition: 1s ease;
+    transition-delay: 0;
+}
+ul.vazifa_list .vazifa_content .description .files.more{
+    padding: 10px 0;
+    overflow: visible;
+    height: auto;
+    transition: 1s ease;
+    transition-delay: 0;
+}
+ul.vazifa_list .vazifa_content .description .show{
+    margin-top: 10px;
+    color: var(--color-primary);
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+}
+ul.vazifa_list .vazifa_content .description .upload{
+    margin-top: 10px;
+    background: var(--color-primary);
+    color: var(--light);
+    float: right;
+    display: block;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: var(--card-border-radius);
+    letter-spacing: 1px;
+}
+ul.vazifa_list .vazifa_content .description button{
+    margin-top: 10px;
+    margin-left: 10px;
+    background: var(--color-primary);
+    color: var(--light);
+    float: right;
+    display: block;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: var(--card-border-radius);
+    letter-spacing: 1px;
+}
+ul.vazifa_list .vazifa_content .description button.delete{
+    background: var(--danger);
+}
+
+.main_forum .chat-wrapper{
+    height: calc(100vh - 60px);
+}
+
+.main_forum .chat-wrapper .chat-messages{
+    max-height: 100%;
+}
+
+main.news .bottom-data .content{
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    display: grid;
+    grid-template-columns: 18vw auto;
+    column-gap: 2rem;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+    left: 0;
+}
+
+main.news .bottom-data .content div.img{
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+main.news .bottom-data .content div.img img{
+    width: 100%;
+    height: 100%;
+}
+main.news .bottom-data .content .text-muted{
+    font-size: 14px;
+}
+
+.add-button {
+    border: none;
+    padding: 10px 15px;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 10px;
+    overflow-x: auto;
+    cursor: pointer;
+}
+
+.add-button.small {
+    display: none;
+    border-radius: 50%;
+    font-size: 28px;
+    padding: 4px 16px;
+}
+
+main.ishchi .add-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.add-button.add-btn {
+    right: 225px;
+}
+
+.add-button.minus-btn {
+    background: var(--danger);
+}
+
+.add_box .info label {
+    display: block;
+    font-weight: bold;
+    padding: 5px 0;
+    width: 100%;
+    font-size: 18px;
+}
+
+.add_box .info input,
+.add_box .info textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: var(--grey);
+    padding: 8px 12px;
+    border-radius: .375rem;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    border: 1px solid var(--dark);
+}
+
+.add_box .info textarea {
+    resize: vertical;
+}
+
+.add_box .info select {
+    width: 100%;
+    padding: 10px 15px;
+    outline: none;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.add_box .info .radio {
+    display: flex;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.add_box .info button.save {
+    width: 50%;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 15px;
+    outline: none;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: .375rem;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    padding: 20px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    color: var(--color-dark);
+    transition: all .3s ease-in-out;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+body.dark .popup {
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.5);
+}
+
+.popup button {
+    color: var(--light);
+    width: 45%;
+    margin: 15px 5px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background: var(--primary);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup button:last-child {
+    background: var(--danger);
+}
+
+.popup table {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+}
+
+.popup table td {
+    padding: 5px 10px 5px 5px;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+}
+
+.mult-select-tag .body,
+.mult-select-tag .drawer {
+    background: var(--grey);
+    border: 1px solid var(--dark);
+}
+
+.mult-select-tag .drawer .input-body {
+    background: var(--light);
+}
+
+.mult-select-tag .btn-container {
+    color: var(--dark);
+    border-left: 1px solid var(--dark);
+}
+
+.mult-select-tag .item-container {
+    color: var(--dark);
+    background: var(--light);
+    border: 1px solid var(--dark);
+}
+
+.mult-select-tag ul li {
+    background: var(--light);
+    margin-bottom: 5px;
+}
+
+.count {
+    position: relative;
+}
+
+.count i {
+    color: var(--dark);
+}
+
+.count .count_num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: var(--light);
+    background: var(--danger);
+    /* padding: 2px 5px; */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    right: -5px;
+    top: -5px;
+    cursor: pointer;
+}
+
+.count .count_num.hide {
+    display: none;
+}
+
+.product_box {
+    width: 100%;
+    height: 100%;
+    background: var(--grey);
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.product_box ul {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+}
+
+.product_box ul li {
+    background: var(--light);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.product_box ul li h2 {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    color: var(--dark);
+}
+
+.product_box ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    color: var(--dark);
+}
+
+.product_box ul li button {
+    display: block;
+    padding: 5px 10px;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    outline: none;
+    margin: 5px auto;
+    border-radius: .375rem;
+    cursor: pointer;
+}
+
+.shop_box h2 {
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.shop_box ul {
+    width: 100%;
+    background: var(--grey);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.shop_box ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--light);
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.listCard li .name {
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.listCard li .total_price {
+    display: flex;
+    gap: 5px;
+    color: var(--dark);
+}
+
+.listCard li .quantity span:first-child,
+.listCard li .quantity span:last-child {
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.listCard li .quantity input {
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: var(--dark);
+    background: var(--grey);
+}
+
+.shop_box .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop_box button {
+    margin: 15px auto 0;
+    padding: 5px 10px;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    outline: none;
+    border-radius: .375rem;
+    cursor: pointer;
+}
+
+.shop_box button.clear_product {
+    background: var(--danger);
+}
+
+.summ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    color: var(--dark);
+}
+
+.summ>* {
+    display: flex;
+    gap: 5px;
+}
+
+ul.loyihalar {
+    margin-top: 20px;
+}
+
+ul.loyihalar li {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+ul.loyihalar li .names_status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul.loyihalar li .names_status small {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+ul.loyihalar li .names_status small i {
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+ul.loyihalar li.active .names_status small i {
+    transform: rotateX(180deg);
+    transition: all 0.3s ease;
+}
+
+ul.loyihalar li .sms {
+    background: var(--grey);
+    margin-top: 0;
+    padding: 0 20px;
+    border-radius: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: auto;
+}
+
+ul.loyihalar li.active .sms {
+    margin-top: 20px;
+    padding: 20px;
+    overflow: visible;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+ul.loyihalar li .sms div {
+    color: var(--dark);
+    font-size: 18px;
+}
+
+ul.loyihalar li .sms div p {
+    display: inline;
+    /* font-weight: bold; */
+}
+
+ul.loyihalar li .sms div a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+ul.loyihalar li .sms .start {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* float: right; */
+}
+
+.maxsulotlar li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--light);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.maxsulotlar li .name {
+    font-weight: bold;
+}
+
+.maxsulotlar li .input input {
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: var(--dark);
+    background: var(--grey);
+}
+
+.box_prays {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box_prays li {
+    padding: 10px 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--dark);
+    transition: all .3s ease;
+}
+
+.box_prays li.active {
+    color: var(--primary);
+}
+
+.box_prays li p {
+    cursor: pointer;
+}
+
+.table_box {
+    width: 100%;
+}
+
+.table_box .table {
+    display: none;
+}
+
+.table_box .table.show {
+    display: block;
+}
+
+.filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.filter li {
+    cursor: pointer;
+}
+
+.filter li.active {
+    border-bottom: 3px solid var(--primary);
+}
+
+table tbody tr.hide {
+    display: none;
+}
